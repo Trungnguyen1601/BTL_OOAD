@@ -82,7 +82,7 @@
                <children>
                   <TextField fx:id="giodi_edit_text" layoutX="111.0" layoutY="117.0" prefHeight="35.0" prefWidth="209.0" />
                   <TextField fx:id="soluongtoa_edit_text" layoutX="111.0" layoutY="259.0" prefHeight="35.0" prefWidth="209.0" />
-                  <Button fx:id="OK_edit_btn" layoutX="284.0" layoutY="434.0" mnemonicParsing="false" onMouseClicked="#setOK" prefHeight="46.0" prefWidth="75.0" styleClass="update_btn" text="OK">
+                  <Button fx:id="OK_edit_btn" layoutX="284.0" layoutY="434.0" mnemonicParsing="false" onMouseClicked="#setOK_Edit" prefHeight="46.0" prefWidth="75.0" styleClass="update_btn" text="OK">
                      <stylesheets>
                         <URL value="@../control.css" />
                         <URL value="@../DesignDashBroard.css" />

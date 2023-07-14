@@ -17,4 +17,7 @@ module com.example.vetau {
     opens com.example.vetau.models to javafx.base;
     exports com.example.vetau.Main;
     opens com.example.vetau.Main to javafx.fxml;
+
+    opens com.example.vetau.TableView.QuanLyTau.ThemTau to javafx.fxml;
+    exports com.example.vetau.TableView.QuanLyTau.ThemTau;
 }

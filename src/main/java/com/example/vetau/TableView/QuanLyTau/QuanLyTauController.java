@@ -1,6 +1,7 @@
 package com.example.vetau.TableView.QuanLyTau;
 
 import com.example.vetau.Show.Button_Extend;
+import com.example.vetau.Show.Show_Window;
 import com.example.vetau.helpers.Database;
 import com.example.vetau.models.ChitietTau;
 import com.example.vetau.models.Tau;
@@ -110,6 +111,8 @@ public class QuanLyTauController implements Initializable {
     ResultSet resultSet = null;
     Tau tau = null;
 
+    public static ChitietTau chitietTau = new ChitietTau();
+
     ObservableList<ChitietTau> TauList = FXCollections.observableArrayList();
     ObservableList<Button_Extend> Button_List = FXCollections.observableArrayList();
     @FXML
@@ -129,6 +132,17 @@ public class QuanLyTauController implements Initializable {
     }
     @FXML
     void Insert_tau_click(MouseEvent event) {
+        String ID_tau = tau_add_id.getText();
+        String SLtoa = Soluongtoa_id.getText();
+        Tau tau_insert = new Tau(ID_tau,Integer.parseInt(SLtoa));
+        chitietTau.setTau(tau_insert);
+        String FXMLPATH_Them_tau = "/DashBroard/Quanlytau/ThemTau/themtau.fxml";
+        try {
+            Show_Window showWindow =new Show_Window();
+            showWindow.Show(FXMLPATH_Them_tau);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
     @FXML
@@ -219,16 +233,7 @@ public class QuanLyTauController implements Initializable {
 
                     UpdateButton.setOnAction(event -> {
                         ChitietTau tau = getTableView().getItems().get(getIndex());
-                        //Train_id = train.getID_train();
-//                        //String FXMLPATH = "/DashBroard/InformationView/Information_train.fxml";
-//                        try {
-//                            Show_Window showWindow =new Show_Window();
-//                            showWindow.Show(FXMLPATH);
-//                        } catch (IOException e) {
-//                            throw new RuntimeException(e);
-//                        }
 
-                        // Gọi phương thức sửa thông tin sinh viên từ MySQL tại đây
                     });
                 }
             }
@@ -395,6 +400,11 @@ public class QuanLyTauController implements Initializable {
     {
 
     }
+
+    public static ChitietTau getChitietTau() {
+        return chitietTau;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadData();

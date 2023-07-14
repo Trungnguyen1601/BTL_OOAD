@@ -131,7 +131,7 @@ public class InformationTrainController implements Initializable {
     }
 
     @FXML
-    void setOK(MouseEvent event1) {
+    void setOK_Edit(MouseEvent event1) {
         Combobox_tau_edit();
         Train_id_edit = DashBroardController.getTrain_id();
         if(gadi_edit_combo.getValue() != null)
